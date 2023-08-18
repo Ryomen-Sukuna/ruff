@@ -1,16 +1,9 @@
 def f():
-    # SIM110
-    for x in iterable:
-        if check(x):
-            return True
-    return False
+    return any(check(x) for x in iterable)
 
 
 def f():
-    for x in iterable:
-        if check(x):
-            return True
-    return True
+    return next((True for x in iterable if check(x)), True)
 
 
 def f():
@@ -21,33 +14,19 @@ def f():
 
 
 def f():
-    # SIM111
-    for x in iterable:
-        if check(x):
-            return False
-    return True
+    return not any(check(x) for x in iterable)
 
 
 def f():
-    # SIM111
-    for x in iterable:
-        if not x.is_empty():
-            return False
-    return True
+    return all(x.is_empty() for x in iterable)
 
 
 def f():
-    for x in iterable:
-        if check(x):
-            return False
-    return False
+    return next((False for x in iterable if check(x)), False)
 
 
 def f():
-    for x in iterable:
-        if check(x):
-            return "foo"
-    return "bar"
+    return next(("foo" for x in iterable if check(x)), "bar")
 
 
 def f():
@@ -99,10 +78,7 @@ def f():
 
 def f():
     for x in iterable:
-        if check(x):
-            return True
-        else:
-            return True
+        return True if check(x) else True
     return False
 
 
@@ -140,37 +116,23 @@ def f():
 def f():
     x = 1
 
-    # SIM110
-    for x in iterable:
-        if check(x):
-            return True
-    return False
+    return any(check(x) for x in iterable)
 
 
 def f():
     x = 1
 
-    # SIM111
-    for x in iterable:
-        if check(x):
-            return False
-    return True
+    return not any(check(x) for x in iterable)
 
 
 def f():
-    # SIM110
-    for x in "012ß9💣2ℝ9012ß9💣2ℝ9012ß9💣2ℝ9012ß9💣2ℝ9012ß9💣2ℝ":
-        if x.isdigit():
-            return True
-    return False
+    return any(x.isdigit() for x in "012ß9💣2ℝ9012ß9💣2ℝ9012ß9💣2ℝ9012ß9💣2ℝ9012ß9💣2ℝ")
 
 
 def f():
-    # OK (too long)
-    for x in "012ß9💣2ℝ9012ß9💣2ℝ9012ß9💣2ℝ9012ß9💣2ℝ9012ß9💣2ℝ9":
-        if x.isdigit():
-            return True
-    return False
+    return any(
+        x.isdigit() for x in "012ß9💣2ℝ9012ß9💣2ℝ9012ß9💣2ℝ9012ß9💣2ℝ9012ß9💣2ℝ9"
+    )
 
 async def f():
     # OK
@@ -180,8 +142,4 @@ async def f():
     return False
 
 async def f():
-    # SIM110
-    for x in iterable:
-        if check(x):
-            return True
-    return False
+    return any(check(x) for x in iterable)

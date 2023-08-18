@@ -47,8 +47,7 @@ for i in range(5):
 
 for i in range(5):
 
-    for j in range(7):
-
+    for _ in range(7):
         print(f"{i}) The lines above me should be removed!")
 
 

@@ -1,10 +1,10 @@
-a = True if b else False  # SIM210
+a = bool(b)
 
-a = True if b != c else False  # SIM210
+a = b != c
 
-a = True if b + c else False  # SIM210
+a = bool(b + c)
 
-a = False if b else True  # OK
+a = not b
 
 
 def f():
@@ -12,4 +12,4 @@ def f():
     def bool():
         return False
 
-    a = True if b else False
+    a = bool(b)

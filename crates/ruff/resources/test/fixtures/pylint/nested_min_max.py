@@ -22,9 +22,9 @@ min(
 
 # Handle iterable expressions.
 min(1, min(a))
-min(1, min(i for i in range(10)))
+min(1, min(range(10)))
 max(1, max(a))
-max(1, max(i for i in range(10)))
+max(1, max(range(10)))
 
 tuples_list = [
     (1, 2),

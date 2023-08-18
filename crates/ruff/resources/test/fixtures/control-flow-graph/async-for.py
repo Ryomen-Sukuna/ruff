@@ -28,8 +28,7 @@ def func():
 
 def func():
     async for i in range(1110):
-        if True:
-            continue
+        continue
 
 def func():
     async for i in range(13):
@@ -37,5 +36,4 @@ def func():
 
 def func():
     async for i in range(1110):
-        if True:
-            break
+        break

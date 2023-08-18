@@ -13,21 +13,10 @@ a5: List(  # a 5
 
 raise (  # b 1a
 )
-raise b1b from (  # b 1b
-)
-raise (  # b 1c
-) from b1c
-del (  # b 2
-)
-assert (  # b 3
-), (  #b 4
-)
 
 def g():
     """Statements that are only allowed in function bodies"""
     return (  # c 1
-    )
-    yield (  # c 2
     )
 async def h():
     """Statements that are only allowed in async function bodies"""
@@ -44,18 +33,7 @@ match d3:
     case (  # d 3
     ):
         pass
-while (  # d 4
-):
-    pass
-if (  # d 5
-):
-    pass
-elif (  # d 6
-):
-    pass
-for (  # d 7
-) in (  # d 8
-):
+while False:
     pass
 try:
     pass

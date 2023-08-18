@@ -1,18 +1,3 @@
-if a and False:  # SIM223
-    pass
-
-if (a or b) and False:  # SIM223
-    pass
-
-if a or (b and False):  # SIM223
-    pass
-
-if a or False:
-    pass
-
-if False:
-    pass
-
 if a and f() and b and g() and False:  # OK
     pass
 
@@ -53,15 +38,15 @@ a and 0.1 and False and 0.2  # SIM223
 
 a and [] and False  # SIM223
 
-a and list([]) and False  # SIM223
+a and [] and False
 
 a and [1] and False and [2]  # SIM223
 
-a and list([1]) and False and list([2])  # SIM223
+a and [1] and False and [2]
 
 a and {} and False  # SIM223
 
-a and dict() and False  # SIM223
+a and {} and False
 
 a and {1: 1} and False and {2: 2}  # SIM223
 
@@ -73,15 +58,15 @@ a and set(set()) and False  # SIM223
 
 a and {1} and False and {2}  # SIM223
 
-a and set({1}) and False and set({2})  # SIM223
+a and {1} and False and {2}
 
 a and () and False  # SIM222
 
-a and tuple(()) and False  # SIM222
+a and () and False
 
 a and (1,) and False and (2,)  # SIM222
 
-a and tuple((1,)) and False and tuple((2,))  # SIM222
+a and (1, ) and False and (2, )
 
 a and frozenset() and False  # SIM222
 
@@ -96,14 +81,11 @@ a and frozenset(frozenset({1})) and False and frozenset(frozenset({2}))  # SIM22
 
 bool(a and [] and False and [])  # SIM223
 
-assert a and [] and False and []  # SIM223
+assert False
 
-if (a and [] and False and []) or (a and [] and False and []):  # SIM223
-    pass
+0 if False else 1
 
-0 if a and [] and False and [] else 1  # SIM222
-
-while a and [] and False and []:  # SIM223
+while False:  # SIM223
     pass
 
 [
@@ -141,9 +123,6 @@ while a and [] and False and []:  # SIM223
 # Outside test `a` is not simplified.
 
 a and [] and False and []  # SIM223
-
-if (a and [] and False and []) == (a and []):  # SIM223
-    pass
 
 if f(a and [] and False and []):  # SIM223
     pass

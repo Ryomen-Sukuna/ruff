@@ -20,11 +20,7 @@ imploding_kwargs = my_function(
     baz="hello, this is a another value",
 )
 
-imploding_line = (
-    1
-    if 1 + 1 == 2
-    else 0
-)
+imploding_line = 1 if True else 0
 
 exploding_line = "hello this is a slightly long string" if some_long_value_name_foo_bar_baz else "this one is a little shorter"
 

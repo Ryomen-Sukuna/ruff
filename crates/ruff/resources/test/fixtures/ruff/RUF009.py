@@ -15,6 +15,8 @@ class ImmutableType(NamedTuple):
     something: int = 8
 
 
+
+
 @dataclass()
 class A:
     hidden_mutable_default: list[int] = default_function()
@@ -24,14 +26,15 @@ class A:
     fine_path: Path = Path()
     fine_date: datetime.date = datetime.date(2042, 1, 1)
     fine_timedelta: datetime.timedelta = datetime.timedelta(hours=7)
-    fine_tuple: tuple[int] = tuple([1])
+    fine_tuple: tuple[int] = (1, )
     fine_regex: re.Pattern = re.compile(r".*")
     fine_float: float = float("-inf")
-    fine_int: int = int(12)
+    fine_int: int = 12
     fine_complex: complex = complex(1, 2)
-    fine_str: str = str("foo")
+    fine_str: str = "foo"
     fine_bool: bool = bool("foo")
     fine_fraction: Fraction = Fraction(1, 2)
+
 
 
 DEFAULT_IMMUTABLETYPE_FOR_ALL_DATACLASSES = ImmutableType(40)
@@ -54,7 +57,7 @@ class IntConversionDescriptor:
         self._default = default
 
     def __set_name__(self, owner, name):
-        self._name = "_" + name
+        self._name = f"_{name}"
 
     def __get__(self, obj, type):
         if obj is None:

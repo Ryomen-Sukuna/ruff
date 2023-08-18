@@ -3,8 +3,8 @@ x = range(10)
 # RUF015
 list(x)[0]
 tuple(x)[0]
-list(i for i in x)[0]
-[i for i in x][0]
+list(x)[0]
+list(x)[0]
 
 # OK (not indexing (solely) the first element)
 list(x)
@@ -14,16 +14,16 @@ list(x)[1:]
 list(x)[:3:2]
 list(x)[::2]
 list(x)[::]
-[i for i in x]
-[i for i in x][1]
-[i for i in x][-1]
-[i for i in x][:1]
-[i for i in x][:1:1]
-[i for i in x][:1:2]
-[i for i in x][1:]
-[i for i in x][:3:2]
-[i for i in x][::2]
-[i for i in x][::]
+list(x)
+list(x)[1]
+list(x)[-1]
+list(x)[:1]
+list(x)[:1:1]
+list(x)[:1:2]
+list(x)[1:]
+list(x)[:3:2]
+list(x)[::2]
+list(x)[::]
 
 # RUF015 (doesn't mirror the underlying list)
 [i + 1 for i in x][0]

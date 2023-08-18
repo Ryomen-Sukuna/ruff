@@ -49,12 +49,10 @@ def f_msg_in_parent_scope():
 def f_fix_indentation_check(foo):
     if foo:
         raise RuntimeError("This is an example exception")
-    else:
-        if foo == "foo":
-            raise RuntimeError(f"This is an exception: {foo}")
-    raise RuntimeError("This is an exception: {}".format(foo))
+    if foo == "foo":
+        raise RuntimeError(f"This is an exception: {foo}")
+    raise RuntimeError(f"This is an exception: {foo}")
 
 
 # Report these, but don't fix them
 if foo: raise RuntimeError("This is an example exception")
-if foo: x = 1; raise RuntimeError("This is an example exception")

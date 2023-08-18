@@ -11,14 +11,13 @@ import d
 import a
 import b
 
-if True:
-    import C
-    import A
+import C
+import A
 
-    # isort: split
+# isort: split
 
-    import D
-    import B
+import D
+import B
 
 
 import e

@@ -10,10 +10,7 @@ _ = (
   "def"
 )
 
-_ = (
-  f"abc" +
-  "def"
-)
+_ = ("abc" + "def")
 
 _ = (
   b"abc" +
@@ -25,10 +22,7 @@ _ = (
   "def"
 )
 
-_ = (
-  f"abc"
-  "def"
-)
+_ = 'abcdef'
 
 _ = (
   b"abc"
@@ -41,21 +35,21 @@ _ = """a
 b""" """c
 d"""
 
-_ = f"""a""" f"""b"""
+_ = 'ab'
 
-_ = f"a" "b"
+_ = 'ab'
 
 _ = """a""" "b"
 
 _ = 'a' "b"
 
-_ = rf"a" rf"b"
+_ = 'ab'
 
 # Single-line explicit concatenation should be ignored.
 _ = "abc" + "def" + "ghi"
-_ = foo + "abc" + "def"
-_ = "abc" + foo + "def"
+_ = f"{foo}abcdef"
+_ = f"abc{foo}def"
 _ = "abc" + "def" + foo
 _ = foo + bar + "abc"
-_ = "abc" + foo + bar
-_ = foo + "abc" + bar
+_ = f"abc{foo}{bar}"
+_ = f"{foo}abc{bar}"

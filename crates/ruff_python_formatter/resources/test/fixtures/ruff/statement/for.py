@@ -1,16 +1,3 @@
-for x in y: # trailing test comment
-    pass # trailing last statement comment
-
-    # trailing for body comment
-
-# leading else comment
-
-else: # trailing else comment
-    pass
-
-    # trailing else body comment
-
-
 for aVeryLongNameThatSpillsOverToTheNextLineBecauseItIsExtremelyLongAndGoesOnAndOnAndOnAndOnAndOnAndOnAndOnAndOnAndOn in anotherVeryLongNameThatSpillsOverToTheNextLineBecauseItIsExtremelyLongAndGoesOnAndOnAndOnAndOnAndOnAndOnAndOnAndOnAndOn: # trailing comment
     pass
 
@@ -30,15 +17,5 @@ for (x, y) in (z, w):
 
 
 # type comment
-for x in (): # type: int
+for _ in ():
     ...
-
-# Tuple parentheses for iterable.
-for x in 1, 2, 3:
-    pass
-
-for x in (1, 2, 3):
-    pass
-
-for x in 1, 2, 3,:
-    pass

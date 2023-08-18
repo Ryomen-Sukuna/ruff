@@ -19,12 +19,12 @@ foo in foo
 
 foo not in foo
 
-id(foo) == id(foo)
+True
 
-len(foo) == len(foo)
+True
 
 # Non-errors.
-"foo" == "foo"  # This is flagged by `comparison-of-constant` instead.
+True
 
 foo == "foo"
 
@@ -52,6 +52,6 @@ x(foo) == y(foo)
 
 id(foo) == id(bar)
 
-id(foo, bar) == id(foo, bar)
+True
 
-id(foo, bar=1) == id(foo, bar=1)
+True

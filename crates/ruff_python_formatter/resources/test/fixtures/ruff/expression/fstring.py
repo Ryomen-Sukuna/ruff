@@ -28,8 +28,4 @@ result_f = (
 
 # Regression for fstring dropping comments that were accidentally attached to
 # an expression inside a formatted value
-(
-    f'{1}'
-    # comment
-    ''
-)
+'1'

@@ -4,18 +4,18 @@ import pydantic
 
 
 class Class:
-    def badAllowed(this):
+    def badAllowed(self):
         pass
 
-    def stillBad(this):
+    def stillBad(self):
         pass
 
     if False:
 
-        def badAllowed(this):
+        def badAllowed(self):
             pass
 
-        def stillBad(this):
+        def stillBad(self):
             pass
 
     @pydantic.validator
@@ -52,8 +52,8 @@ class Class:
 
 
 class PosOnlyClass:
-    def badAllowed(this, blah, /, self, something: str):
+    def badAllowed(self, blah, /, self, something: str):
         pass
 
-    def stillBad(this, blah, /, self, something: str):
+    def stillBad(self, blah, /, self, something: str):
         pass

@@ -4,5 +4,4 @@ IRRELEVANT = typing.TypeVar
 
 
 def main() -> None:
-    List: list[str] = []
-    List.append("hello")
+    List: list[str] = ["hello"]

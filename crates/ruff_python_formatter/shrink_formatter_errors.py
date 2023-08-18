@@ -22,12 +22,11 @@ error_lines_prefix = "Unstable formatting "
 
 
 def get_filenames() -> list[str]:
-    files = []
-    for line in error_report.read_text().splitlines():
-        if not line.startswith(error_lines_prefix):
-            continue
-        files.append(line.removeprefix(error_lines_prefix))
-    return files
+    return [
+        line.removeprefix(error_lines_prefix)
+        for line in error_report.read_text().splitlines()
+        if line.startswith(error_lines_prefix)
+    ]
 
 
 def shrink_file(file: str) -> tuple[str, str]:
@@ -51,10 +50,7 @@ def shrink_file(file: str) -> tuple[str, str]:
 def main():
     storage = target.joinpath("minimizations.json")
     output_file = target.joinpath("minimizations.py")
-    if storage.is_file():
-        outputs = json.loads(storage.read_text())
-    else:
-        outputs = {}
+    outputs = json.loads(storage.read_text()) if storage.is_file() else {}
     files = sorted(set(get_filenames()) - set(outputs))
     # Each process will saturate one core
     with ThreadPoolExecutor(max_workers=os.cpu_count()) as executor:

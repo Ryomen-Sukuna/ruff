@@ -34,9 +34,9 @@ foo(cat=(category := "vector"))
 if any(len(longline := l) >= 100 for l in lines):
     print(longline)
 if env_base := os.environ.get("PYTHONUSERBASE", None):
-    return env_base
+    pass
 if self._is_special and (ans := self._check_nans(context=context)):
-    return ans
+    pass
 foo(b := 2, a=1)
 foo((b := 2), a=1)
 foo(c=(b := 2), a=1)

@@ -2,15 +2,15 @@ from abc import ABCMeta
 
 
 class Class:
-    def __init_subclass__(self, default_name, **kwargs):
+    def __init_subclass__(cls, default_name, **kwargs):
         ...
 
     @classmethod
-    def badAllowed(self, x, /, other):
+    def badAllowed(cls, x, /, other):
         ...
 
     @classmethod
-    def stillBad(self, x, /, other):
+    def stillBad(cls, x, /, other):
         ...
 
 

@@ -1,8 +1,6 @@
 def f():
     items = [1, 2, 3, 4]
-    result = []
-    for i in items:
-        result.append(i)  # PERF402
+    result = list(items)
 
 
 def f():
@@ -14,9 +12,7 @@ def f():
 
 def f():
     items = [1, 2, 3, 4]
-    result = []
-    for i in items:
-        result.append(i * i)  # OK
+    result = [i * i for i in items]
 
 
 def f():

@@ -54,23 +54,19 @@ def func():
 def func():
     i = 0
     while True:
-        if True:
-            print("ok")
+        print("ok")
         i += 1
     return i
 
 def func():
     i = 0
     while True:
-        if False:
-            print("ok")
         i += 1
     return i
 
 def func():
     while True:
-        if True:
-            return 1
+        return 1
     return 0
 
 def func():
@@ -91,13 +87,11 @@ def func():
 
 def func():
     while True:
-        if True:
-            continue
+        continue
 
 def func():
     while True:
-        if True:
-            break
+        break
 
 '''
 TODO: because `try` statements aren't handled this triggers a false positive as

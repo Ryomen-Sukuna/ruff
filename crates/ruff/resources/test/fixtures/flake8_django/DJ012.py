@@ -103,14 +103,14 @@ class PerfectlyFine(models.Model):
         super(PerfectlyFine, self).save(**kwargs)
 
     def get_absolute_url(self):
-        return "http://%s" % self
+        return f"http://{self}"
 
     def my_method(self):
         pass
 
     @property
     def random_property(self):
-        return "%s" % self
+        return f"{self}"
 
 
 class MultipleConsecutiveFields(models.Model):

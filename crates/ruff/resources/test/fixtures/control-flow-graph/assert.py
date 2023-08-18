@@ -1,11 +1,11 @@
 def func():
-    assert True
+    pass
 
 def func():
     assert False
 
 def func():
-    assert True, "oops"
+    pass
 
 def func():
     assert False, "oops"

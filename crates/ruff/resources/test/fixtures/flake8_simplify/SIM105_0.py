@@ -65,7 +65,7 @@ except ValueError:
 
 # OK
 try:
-    for i in range(3):
+    for _ in range(3):
         foo()
 except ValueError:
     pass

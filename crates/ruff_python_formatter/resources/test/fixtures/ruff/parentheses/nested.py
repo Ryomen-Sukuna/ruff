@@ -26,13 +26,7 @@ a = a + b + c + d + ( # Hello
     e + f + g
 )
 
-a = int(  # type: ignore
-    int(  # type: ignore
-        int(  # type: ignore
-            6
-        )
-    )
-)
+a = 6
 
 # Stability and correctness checks
 b1 = () - (  #

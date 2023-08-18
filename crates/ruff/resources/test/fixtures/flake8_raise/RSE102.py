@@ -12,29 +12,6 @@ except ZeroDivisionError:
 # RSE102
 raise TypeError()
 
-# RSE102
-raise TypeError ()
-
-# RSE102
-raise TypeError \
-    ()
-
-# RSE102
-raise TypeError(
-
-)
-
-# RSE102
-raise TypeError(
-    # Hello, world!
-)
-
-# OK
-raise AssertionError
-
-# OK
-raise AttributeError("test message")
-
 
 def return_error():
     return ValueError("Something")

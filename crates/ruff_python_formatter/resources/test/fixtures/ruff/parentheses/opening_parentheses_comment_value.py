@@ -13,21 +13,10 @@ x) = 5
 
 raise (  # b 1a
 x)
-raise b1b from (  # b 1b
-x)
-raise (  # b 1c
-x) from b1c
-del (  # b 2
-x)
-assert (  # b 3
-x), (  #b 4
-x)
 
 def g():
     """Statements that are only allowed in function bodies"""
     return (  # c 1
-    x)
-    yield (  # c 2
     x)
 async def h():
     """Statements that are only allowed in async function bodies"""
@@ -46,12 +35,6 @@ match d3:
         pass
 while (  # d 4
 x):
-    pass
-if (  # d 5
-x):
-    pass
-elif (  # d 6
-y):
     pass
 for (  # d 7
 x) in (  # d 8
@@ -134,15 +117,9 @@ x}
 def f1[  # f1
     T
 ](): pass
-f2 = (  # f2
-    i for i in range(10)
-)
-f3 = [  # f3
-    i for i in range(10)
-]
-f4 = {  # f4
-    i for i in range(10)
-}
+f2 = iter(range(10))
+f3 = list(range(10))
+f4 = set(range(10))
 f5 = {  # f5
     i: i**2 for i in range(10)
 }

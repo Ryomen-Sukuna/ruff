@@ -17,7 +17,6 @@ def bad():
         process()
     except Exception:
         raise
-        print("this code is pointless!")
 
 def bad():
     try:
@@ -111,8 +110,7 @@ def fine():
     try:
         process()
     except Exception:
-        if True:
-            raise
+        raise
 
 def fine():
     try:

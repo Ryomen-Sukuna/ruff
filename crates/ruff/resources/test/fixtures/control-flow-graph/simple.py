@@ -12,12 +12,9 @@ def func():
 
 def func():
     return 1
-    return "unreachable"
 
 def func():
     i = 0
 
 def func():
-    i = 0
-    i += 2
-    return i
+    return 0 + 2

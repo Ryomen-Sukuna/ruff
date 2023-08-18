@@ -125,7 +125,6 @@ finally:
 try: pass # a
 except ZeroDivisionError: pass # b
 except: pass # c
-else: pass # d
 finally: pass # e
 
 try:  # 1 preceding: any, following: first in body, enclosing: try

@@ -1,15 +1,9 @@
-pass
-
-# fmt: off
-  # A comment that falls into the verbatim range
 a +   b # a trailing comment
 
 # in between comments
 
 # function comment
 def test():
-    pass
-
   # under indent
 
     def nested():

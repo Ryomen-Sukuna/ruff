@@ -374,7 +374,7 @@ async def main(
                 print()
 
                 print("```")
-                print(str(diff))
+                print(diff)
                 print("```")
 
                 print()
@@ -417,7 +417,7 @@ async def main(
                         # Which was found in local testing
                         continue
 
-                    rule_code = matches.group(1)
+                    rule_code = matches[1]
 
                     # Get current additions and removals for this rule
                     current_changes = rule_changes.get(rule_code, (0, 0))

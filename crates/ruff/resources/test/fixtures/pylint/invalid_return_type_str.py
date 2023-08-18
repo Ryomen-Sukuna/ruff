@@ -16,8 +16,7 @@ class Bool:
     
 class Str2:
     def __str__(self):
-        x = "ruff"
-        return x
+        return "ruff"
     
 # TODO fixme once Ruff has better type checking
 def return_int():

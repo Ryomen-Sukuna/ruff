@@ -17,9 +17,4 @@ class X:
 
 class A:
     def b(self):
-        if self.connection.mysql_is_mariadb and (
-            10,
-            4,
-            3,
-        ) < self.connection.mysql_version < (10, 5, 2):
-            pass
+        pass

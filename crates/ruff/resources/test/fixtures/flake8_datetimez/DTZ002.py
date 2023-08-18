@@ -6,7 +6,7 @@ datetime.datetime.today()
 from datetime import datetime
 
 # unqualified
-datetime.today()
+datetime.now()
 
 # uses `astimezone` method
-datetime.today().astimezone()
+datetime.now().astimezone()

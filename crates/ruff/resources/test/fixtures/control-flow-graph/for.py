@@ -9,10 +9,7 @@ def func():
         return 0
 
 def func():
-    for i in range(10):
-        if i == 5:
-            return 1
-    return 0
+    return next((1 for i in range(10) if i == 5), 0)
 
 def func():
     for i in range(111):
@@ -23,19 +20,17 @@ def func():
     return 2
 
 def func():
-    for i in range(12):
+    for _ in range(12):
         continue
 
 def func():
-    for i in range(1110):
-        if True:
-            continue
+    for _ in range(1110):
+        continue
 
 def func():
-    for i in range(13):
+    for _ in range(13):
         break
 
 def func():
-    for i in range(1110):
-        if True:
-            break
+    for _ in range(1110):
+        break

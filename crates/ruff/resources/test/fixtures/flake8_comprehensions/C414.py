@@ -16,12 +16,7 @@ sorted(sorted(x, key=foo, reverse=False), reverse=False, key=foo)
 sorted(sorted(x, reverse=True), reverse=True)
 sorted(reversed(x))
 sorted(list(x), key=lambda y: y)
-tuple(
-    list(
-        [x, 3, "hell"\
-        "o"]
-    )
-)
+(x, 3, "hell" "o")
 
 # Nested sorts with differing keyword arguments. Not flagged.
 sorted(sorted(x, key=lambda y: y))

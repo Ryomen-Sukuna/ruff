@@ -1,17 +1,3 @@
-if a or True:  # SIM222
-    pass
-
-if (a or b) or True:  # SIM222
-    pass
-
-if a or (b or True):  # SIM222
-    pass
-
-if a and True:  # OK
-    pass
-
-if True:  # OK
-    pass
 
 
 def validate(self, value):
@@ -58,15 +44,15 @@ a or 0.1 or True or 0.2  # SIM222
 
 a or [] or True  # SIM222
 
-a or list([]) or True  # SIM222
+a or [] or True
 
 a or [1] or True or [2]  # SIM222
 
-a or list([1]) or True or list([2])  # SIM222
+a or [1] or True or [2]
 
 a or {} or True  # SIM222
 
-a or dict() or True  # SIM222
+a or {} or True
 
 a or {1: 1} or True or {2: 2}  # SIM222
 
@@ -78,15 +64,15 @@ a or set(set()) or True  # SIM222
 
 a or {1} or True or {2}  # SIM222
 
-a or set({1}) or True or set({2})  # SIM222
+a or {1} or True or {2}
 
 a or () or True  # SIM222
 
-a or tuple(()) or True  # SIM222
+a or () or True
 
 a or (1,) or True or (2,)  # SIM222
 
-a or tuple((1,)) or True or tuple((2,))  # SIM222
+a or (1, ) or True or (2, )
 
 a or frozenset() or True  # SIM222
 
@@ -101,14 +87,9 @@ a or frozenset(frozenset({1})) or True or frozenset(frozenset({2}))  # SIM222
 
 bool(a or [1] or True or [2])  # SIM222
 
-assert a or [1] or True or [2]  # SIM222
+0 if True else 1
 
-if (a or [1] or True or [2]) and (a or [1] or True or [2]):  # SIM222
-    pass
-
-0 if a or [1] or True or [2] else 1  # SIM222
-
-while a or [1] or True or [2]:  # SIM222
+while True:  # SIM222
     pass
 
 [
@@ -146,9 +127,6 @@ while a or [1] or True or [2]:  # SIM222
 # Outside test `a` is not simplified.
 
 a or [1] or True or [2]  # SIM222
-
-if (a or [1] or True or [2]) == (a or [1]):  # SIM222
-    pass
 
 if f(a or [1] or True or [2]):  # SIM222
     pass

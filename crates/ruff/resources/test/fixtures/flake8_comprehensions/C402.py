@@ -15,4 +15,4 @@ f'{ dict((x, x) for x in range(3)) | dict((x, x) for x in range(3)) }'
 def f(x):
     return x
 
-print(f'Hello {dict((x,f(x)) for x in "abc")} World')
+print(f'Hello {{x: f(x) for x in "abc"}} World')

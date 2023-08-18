@@ -1,40 +1,23 @@
 def after_return():
     return "reachable"
-    return "unreachable"
 
 async def also_works_on_async_functions():
     return "reachable"
-    return "unreachable"
 
 def if_always_true():
-    if True:
-        return "reachable"
-    return "unreachable"
+    return "reachable"
 
 def if_always_false():
-    if False:
-        return "unreachable"
     return "reachable"
 
 def if_elif_always_false():
-    if False:
-        return "unreachable"
-    elif False:
-        return "also unreachable"
     return "reachable"
 
 def if_elif_always_true():
-    if False:
-        return "unreachable"
-    elif True:
-        return "reachable"
-    return "also unreachable"
+    return "reachable"
 
 def ends_with_if():
-    if False:
-        return "unreachable"
-    else:
-        return "reachable"
+    return "reachable"
 
 def infinite_loop():
     while True:
@@ -84,7 +67,6 @@ def match_case_and_wildcard(status):
 
 def raise_exception():
     raise Exception
-    return "unreachable"
 
 def while_false():
     while False:
@@ -141,8 +123,7 @@ def while_infinite():
 
 def while_if_true():
     while True:
-        if True:
-            return "reachable"
+        return "reachable"
     return "unreachable"
 
 # Test case found in the Bokeh repository that trigger a false positive.

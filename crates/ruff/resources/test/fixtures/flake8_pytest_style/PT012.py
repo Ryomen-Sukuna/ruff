@@ -46,11 +46,10 @@ def test_error_multiple_statements():
 
 async def test_error_complex_statement():
     with pytest.raises(AttributeError):
-        if True:
-            [].size
+        [].size
 
     with pytest.raises(AttributeError):
-        for i in []:
+        for _ in []:
             [].size
 
     with pytest.raises(AttributeError):
@@ -63,8 +62,7 @@ async def test_error_complex_statement():
 
     with pytest.raises(AttributeError):
         async with context_manager_under_test():
-            if True:
-                raise Exception
+            raise Exception
 
 
 def test_error_try():

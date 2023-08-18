@@ -1,7 +1,6 @@
 # Errors
 (a := 42)
-if True:
-    (b := 1)
+(b := 1)
 
 
 class Foo:
