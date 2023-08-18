@@ -211,7 +211,7 @@ def main(argv: Sequence[str] | None = None) -> int:
         Path("docs/rules") / f for f in os.listdir("docs/rules") if f.endswith(".md")
     ]
 
-    if len(generated_docs) == 0:
+    if not generated_docs:
         print("Please generate rules first.")
         return 1
 
@@ -233,8 +233,9 @@ def main(argv: Sequence[str] | None = None) -> int:
             )
             return 1
 
-        duplicates = list({x for x in known_list if known_list.count(x) > 1})
-        if len(duplicates) > 0:
+        if duplicates := list(
+            {x for x in known_list if known_list.count(x) > 1}
+        ):
             print(f"Known {file_string} has duplicates:")
             print("\n".join([f"  - {x}" for x in duplicates]))
             print("Please remove them and re-run.")
@@ -261,10 +262,7 @@ def main(argv: Sequence[str] | None = None) -> int:
     if errors > 0:
         print(f"New code block parse errors identified: {errors}")
 
-    if violations > 0 or errors > 0:
-        return 1
-
-    return 0
+    return 1 if violations > 0 or errors > 0 else 0
 
 
 if __name__ == "__main__":

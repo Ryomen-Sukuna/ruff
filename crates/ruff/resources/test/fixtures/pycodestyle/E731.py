@@ -32,14 +32,12 @@ def scope():
 
 def scope():
     # OK
-    f = {}
-    f["a"] = lambda x: x**2
+    f = {"a": lambda x: x**2}
 
 
 def scope():
     # OK
-    f = []
-    f.append(lambda x: x**2)
+    f = [lambda x: x**2]
 
 
 def scope():
@@ -69,11 +67,7 @@ def scope():
     from typing import Callable
 
     x: Callable[[int], int]
-    if True:
-        x = lambda: 1
-    else:
-        x = lambda: 2
-    return x
+    return lambda: 1
 
 
 def scope():

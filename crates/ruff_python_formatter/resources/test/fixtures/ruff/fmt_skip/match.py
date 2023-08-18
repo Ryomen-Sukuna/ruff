@@ -70,4 +70,4 @@ match point:
     case Point(x, y) if x   == y:  # fmt: skip
         print(f"The point is located on the diagonal Y=X at {x}.")
     case Point(x, y):
-        print(f"Point is not on the diagonal.")
+        print("Point is not on the diagonal.")

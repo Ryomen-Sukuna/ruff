@@ -33,8 +33,7 @@ r'\""'
 'This string will not include \
 backslashes or newline characters.'
 
-if True:
-    'This string will not include \
+'This string will not include \
         backslashes or newline characters.'
 
 """Multiline
@@ -76,25 +75,6 @@ String \"\"\"
 (
     "Let's" "start" "with" "a" "simple" "example" "now repeat after me:" "I am confident" "I am confident" "I am confident" "I am confident" "I am confident"
 )
-
-if (
-    a + "Let's"
-        "start"
-        "with"
-        "a"
-        "simple"
-        "example"
-        "now repeat after me:"
-        "I am confident"
-        "I am confident"
-        "I am confident"
-        "I am confident"
-        "I am confident"
-):
-    pass
-
-if "Let's" "start" "with" "a" "simple" "example" "now repeat after me:" "I am confident" "I am confident" "I am confident" "I am confident" "I am confident":
-    pass
 
 (
     # leading

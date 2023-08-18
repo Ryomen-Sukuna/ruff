@@ -4,12 +4,12 @@ import pydantic
 
 
 class Class:
-    def bad_method(this):
+    def bad_method(self):
         pass
 
     if False:
 
-        def extra_bad_method(this):
+        def extra_bad_method(self):
             pass
 
     def good_method(self):
@@ -41,7 +41,7 @@ class Class:
     def __new__(cls, *args, **kwargs):
         ...
 
-    def __init_subclass__(self, default_name, **kwargs):
+    def __init_subclass__(cls, default_name, **kwargs):
         ...
 
 
@@ -49,7 +49,7 @@ class MetaClass(abc.ABCMeta):
     def bad_method(self):
         pass
 
-    def good_method(cls):
+    def good_method(self):
         pass
 
 
@@ -61,5 +61,5 @@ class PosOnlyClass:
     def good_method_pos_only(self, blah, /, something: str):
         pass
 
-    def bad_method_pos_only(this, blah, /, self, something: str):
+    def bad_method_pos_only(self, blah, /, self, something: str):
         pass

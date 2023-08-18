@@ -1,7 +1,7 @@
-x = "This is a really long string that can't possibly be expected to fit all together on one line. In fact it may even take up three or more lines... like four or five... but probably just three."
-
-x += "This is a really long string that can't possibly be expected to fit all together on one line. In fact it may even take up three or more lines... like four or five... but probably just three."
-
+x = (
+    "This is a really long string that can't possibly be expected to fit all together on one line. In fact it may even take up three or more lines... like four or five... but probably just three."
+    + "This is a really long string that can't possibly be expected to fit all together on one line. In fact it may even take up three or more lines... like four or five... but probably just three."
+)
 y = "Short string"
 
 print(
@@ -31,19 +31,13 @@ D3 = {
 }
 
 D4 = {
-    "A long and ridiculous {}".format(
-        string_key
-    ): "This is a really really really long string that has to go i,side of a dictionary. It is soooo bad.",
+    f"A long and ridiculous {string_key}": "This is a really really really long string that has to go i,side of a dictionary. It is soooo bad.",
     some_func(
         "calling", "some", "stuff"
     ): "This is a really really really long string that has to go inside of a dictionary. It is {soooo} bad (#{x}).".format(
         sooo="soooo", x=2
     ),
-    "A %s %s"
-    % (
-        "formatted",
-        "string",
-    ): "This is a really really really long string that has to go inside of a dictionary. It is %s bad (#%d)."
+    'A formatted string': "This is a really really really long string that has to go inside of a dictionary. It is %s bad (#%d)."
     % ("soooo", 2),
 }
 
@@ -112,40 +106,19 @@ bad_split_func3(
 
 raw_string = r"This is a long raw string. When re-formatting this string, black needs to make sure it prepends the 'r' onto the new string."
 
-fmt_string1 = "We also need to be sure to preserve any and all {} which may or may not be attached to the string in question.".format(
-    "method calls"
-)
+fmt_string1 = 'We also need to be sure to preserve any and all method calls which may or may not be attached to the string in question.'
 
-fmt_string2 = "But what about when the string is {} but {}".format(
-    "short",
-    "the method call is really really really really really really really really long?",
-)
+fmt_string2 = 'But what about when the string is short but the method call is really really really really really really really really long?'
 
-old_fmt_string1 = (
-    "While we are on the topic of %s, we should also note that old-style formatting must also be preserved, since some %s still uses it."
-    % ("formatting", "code")
-)
+old_fmt_string1 = 'While we are on the topic of formatting, we should also note that old-style formatting must also be preserved, since some code still uses it.'
 
-old_fmt_string2 = "This is a %s %s %s %s" % (
-    "really really really really really",
-    "old",
-    "way to format strings!",
-    "Use f-strings instead!",
-)
+old_fmt_string2 = 'This is a really really really really really old way to format strings! Use f-strings instead!'
 
-old_fmt_string3 = (
-    "Whereas only the strings after the percent sign were long in the last example, this example uses a long initial string as well. This is another %s %s %s %s"
-    % (
-        "really really really really really",
-        "old",
-        "way to format strings!",
-        "Use f-strings instead!",
-    )
-)
+old_fmt_string3 = 'Whereas only the strings after the percent sign were long in the last example, this example uses a long initial string as well. This is another really really really really really old way to format strings! Use f-strings instead!'
 
 fstring = f"f-strings definitely make things more {difficult} than they need to be for {{black}}. But boy they sure are handy. The problem is that some lines will need to have the 'f' whereas others do not. This {line}, for example, needs one."
 
-fstring_with_no_fexprs = f"Some regular string that needs to get split certainly but is NOT an fstring by any means whatsoever."
+fstring_with_no_fexprs = "Some regular string that needs to get split certainly but is NOT an fstring by any means whatsoever."
 
 comment_string = "Long lines with inline comments should have their comments appended to the reformatted string's enclosing right parentheses."  # This comment gets thrown to the top.
 
@@ -171,36 +144,24 @@ assert (
 
 assert (
     some_type_of_boolean_expression
-), "Followed by a really really really long string that is used to provide context to the AssertionError exception, which uses dynamic string {}.".format(
-    "formatting"
-)
+), 'Followed by a really really really long string that is used to provide context to the AssertionError exception, which uses dynamic string formatting.'
 
-assert some_type_of_boolean_expression, (
-    "Followed by a really really really long string that is used to provide context to the AssertionError exception, which uses dynamic string %s."
-    % "formatting"
-)
+assert (
+    some_type_of_boolean_expression
+), 'Followed by a really really really long string that is used to provide context to the AssertionError exception, which uses dynamic string formatting.'
 
-assert some_type_of_boolean_expression, (
-    "Followed by a really really really long string that is used to provide context to the AssertionError exception, which uses dynamic %s %s."
-    % ("string", "formatting")
+assert (
+    some_type_of_boolean_expression
+), 'Followed by a really really really long string that is used to provide context to the AssertionError exception, which uses dynamic string formatting.'
+
+some_function_call(
+    f"With a reallly generic name and with a really really long string that is, at some point down the line, {added} to a variable and then added to another string."
 )
 
 some_function_call(
-    "With a reallly generic name and with a really really long string that is, at some point down the line, "
-    + added
-    + " to a variable and then added to another string."
-)
-
-some_function_call(
-    "With a reallly generic name and with a really really long string that is, at some point down the line, "
-    + added
-    + " to a variable and then added to another string. But then what happens when the final string is also supppppperrrrr long?! Well then that second (realllllllly long) string should be split too.",
+    f"With a reallly generic name and with a really really long string that is, at some point down the line, {added} to a variable and then added to another string. But then what happens when the final string is also supppppperrrrr long?! Well then that second (realllllllly long) string should be split too.",
     "and a second argument",
     and_a_third,
-)
-
-return "A really really really really really really really really really really really really really long {} {}".format(
-    "return", "value"
 )
 
 func_with_bad_comma(
@@ -247,13 +208,7 @@ func_with_bad_parens(
     z,
 )
 
-annotated_variable: Final = (
-    "This is a large "
-    + STRING
-    + " that has been "
-    + CONCATENATED
-    + "using the '+' operator."
-)
+annotated_variable: Final = f"This is a large {STRING} that has been {CONCATENATED}using the '+' operator."
 annotated_variable: Final = "This is a large string that has a type annotation attached to it. A type annotation should NOT stop a long string from being wrapped."
 annotated_variable: Literal[
     "fakse_literal"

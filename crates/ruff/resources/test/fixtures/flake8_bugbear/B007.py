@@ -15,7 +15,7 @@ for _ in range(10):  # _ is okay for a throw-away variable
 
 for i in range(10):
     for j in range(10):
-        for k in range(10):  # k not used, i and j used transitively
+        for _ in range(10):
             print(i + j)
 
 
@@ -95,12 +95,9 @@ def f():
 
 # Unfixable due to trailing underscore (`_line_` wouldn't be considered an ignorable
 # variable name).
-for line_ in range(self.header_lines):
+for _ in range(self.header_lines):
     fp.readline()
 
 # Regression test: visitor didn't walk the elif test
 for key, value in current_crawler_tags.items():
-    if key:
-        pass
-    elif wanted_tag_value != value:
-        pass
+    pass

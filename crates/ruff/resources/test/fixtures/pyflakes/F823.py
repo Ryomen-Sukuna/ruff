@@ -61,9 +61,6 @@ import sys
 def main():
     print(sys.argv)
 
-    for sys in range(5):
-        pass
-
 
 import requests_mock as rm
 

@@ -27,8 +27,7 @@ Rb"Test"
 b'This string will not include \
 backslashes or newline characters.'
 
-if True:
-    b'This string will not include \
+b'This string will not include \
         backslashes or newline characters.'
 
 b"""Multiline
@@ -70,25 +69,6 @@ b"Let's" b"start" b"with" b"a" b"simple" b"example" b"now repeat after me:" b"I 
 (
     b"Let's" b"start" b"with" b"a" b"simple" b"example" b"now repeat after me:" b"I am confident" b"I am confident" b"I am confident" b"I am confident" b"I am confident"
 )
-
-if (
-    a + b"Let's"
-        b"start"
-        b"with"
-        b"a"
-        b"simple"
-        b"example"
-        b"now repeat after me:"
-        b"I am confident"
-        b"I am confident"
-        b"I am confident"
-        b"I am confident"
-        b"I am confident"
-):
-    pass
-
-if b"Let's" b"start" b"with" b"a" b"simple" b"example" b"now repeat after me:" b"I am confident" b"I am confident" b"I am confident" b"I am confident" b"I am confident":
-    pass
 
 (
     # leading

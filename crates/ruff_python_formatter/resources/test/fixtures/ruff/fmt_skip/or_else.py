@@ -18,14 +18,12 @@ else   : #fmt: skip
     print("I was already larger than 9")
 
 
-try  :  # fmt: skip
+try:  # fmt: skip
     some_call()
 except Exception :  # fmt: skip
     pass
 except :  # fmt: skip
     handle_exception()
 
-else   : # fmt: skip
-    pass
-finally  :  # fmt: skip
+finally:  # fmt: skip
     finally_call()

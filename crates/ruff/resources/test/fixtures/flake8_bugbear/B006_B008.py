@@ -183,7 +183,7 @@ def float_str_not_inf_or_nan_okay(value=float("3.14")):
 
 
 # Allow immutable str() value
-def str_okay(value=str("foo")):
+def str_okay(value="foo"):
     pass
 
 

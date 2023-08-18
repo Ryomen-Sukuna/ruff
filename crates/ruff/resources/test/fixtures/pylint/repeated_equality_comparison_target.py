@@ -1,27 +1,27 @@
 # Errors.
-foo == "a" or foo == "b"
+foo in ["a", "b"]
 
-foo != "a" and foo != "b"
+foo not in ["a", "b"]
 
-foo == "a" or foo == "b" or foo == "c"
+foo in ["a", "b", "c"]
 
-foo != "a" and foo != "b" and foo != "c"
+foo not in ["a", "b", "c"]
 
-foo == a or foo == "b" or foo == 3  # Mixed types.
+foo in [a, "b", 3]
 
 # False negatives (the current implementation doesn't support Yoda conditions).
-"a" == foo or "b" == foo or "c" == foo
+foo in ["a", "b", "c"]
 
-"a" != foo and "b" != foo and "c" != foo
+foo not in ["a", "b", "c"]
 
-"a" == foo or foo == "b" or "c" == foo
+foo in ["a", "b", "c"]
 
 # OK
 foo == "a" and foo == "b" and foo == "c"  # `and` mixed with `==`.
 
 foo != "a" or foo != "b" or foo != "c"  # `or` mixed with `!=`.
 
-foo == a or foo == b() or foo == c  # Call expression.
+foo in [a, b(), c]
 
 foo != a or foo() != b or foo != c  # Call expression.
 

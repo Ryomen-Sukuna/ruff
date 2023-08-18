@@ -1,35 +1,21 @@
 def f():
     items = [1, 2, 3, 4]
-    result = []
-    for i in items:
-        if i % 2:
-            result.append(i)  # PERF401
+    result = [i for i in items if i % 2]
 
 
 def f():
     items = [1, 2, 3, 4]
-    result = []
-    for i in items:
-        result.append(i * i)  # PERF401
+    result = [i * i for i in items]
 
 
 def f():
     items = [1, 2, 3, 4]
-    result = []
-    for i in items:
-        if i % 2:
-            result.append(i)  # PERF401
-        elif i % 2:
-            result.append(i)  # PERF401
-        else:
-            result.append(i)  # PERF401
+    result = list(items)
 
 
 def f():
     items = [1, 2, 3, 4]
-    result = []
-    for i in items:
-        result.append(i)  # OK
+    result = list(items)
 
 
 def f():
@@ -49,14 +35,12 @@ def f():
 
 def f():
     fibonacci = [0, 1]
-    for i in range(20):
-        fibonacci.append(sum(fibonacci[-2:]))  # OK
+    fibonacci.extend(sum(fibonacci[-2:]) for _ in range(20))
     print(fibonacci)
 
 
 def f():
     foo = object()
     foo.fibonacci = [0, 1]
-    for i in range(20):
-        foo.fibonacci.append(sum(foo.fibonacci[-2:]))  # OK
+    foo.fibonacci.extend(sum(foo.fibonacci[-2:]) for _ in range(20))
     print(foo.fibonacci)

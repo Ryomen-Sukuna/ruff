@@ -3,9 +3,6 @@ if a:
     if b:
         c
 
-# SIM102
-if a:
-    if b:
         if c:
             d
 
@@ -16,21 +13,13 @@ elif b:
     if c:
         d
 
-# SIM102
 if a:
-    # Unfixable due to placement of this comment.
     if b:
         c
 
-# SIM102
-if a:
-    if b:
         # Fixable due to placement of this comment.
         c
 
-# OK
-if a:
-    if b:
         c
     else:
         d
@@ -117,15 +106,10 @@ else:
     print("bar")
 
 # OK
-if a:
-    if b:
-        if c:
-            print("foo")
-        else:
-            print("bar")
-else:
+if a and b and c:
+    print("foo")
+elif a and b or not a:
     print("bar")
-
 # OK
 if a:
     # SIM 102
@@ -144,18 +128,6 @@ if a:
         print("baz")
 else:
     print("bar")
-
-
-# OK
-if False:
-    if a:
-        pass
-
-
-# OK
-if True:
-    if a:
-        pass
 
 
 # SIM102

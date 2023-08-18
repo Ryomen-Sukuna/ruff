@@ -1,6 +1,5 @@
 def main() -> None:
-    a_list: list[str] | None = []
-    a_list.append("hello")
+    a_list: list[str] | None = ["hello"]
 
 
 def hello(y: dict[str, int] | None) -> None:

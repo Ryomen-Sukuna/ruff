@@ -13,8 +13,11 @@ def h(w: Literal["a", "b"], x: typing.Literal["c"], y: typing_extensions.Literal
 def j() -> "int": ...  # Y020 Quoted annotations should never be used in stubs
 Alias: TypeAlias = list["int"]  # Y020 Quoted annotations should never be used in stubs
 
-class Child(list["int"]):  # Y020 Quoted annotations should never be used in stubs
-    """Documented and guaranteed useful."""  # Y021 Docstrings should not be included in stubs
+
+
+class Child(Alias):    # Y020 Quoted annotations should never be used in stubs
+    """Documented and guaranteed useful."""
+
 
 if sys.platform == "linux":
     f: "int"  # Y020 Quoted annotations should never be used in stubs

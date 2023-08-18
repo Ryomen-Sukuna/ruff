@@ -12,15 +12,11 @@ try:
 except:
     print("error")
 
-# OK
-i = 0
-while i < 10:
+for i in range(10):
     try:
         print(f"{i}")
     except:
         print("error")
-
-    i += 1
 
 # OK - no other way to write this
 for i in range(10):

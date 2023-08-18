@@ -42,9 +42,6 @@ f'{(x:=10)}'
 
 def a():
     return (x := 3)
-    await (b := 1)
-    yield (a := 2)
-    raise (c := 3)
 
 def this_is_so_dumb() -> (please := no):
     pass

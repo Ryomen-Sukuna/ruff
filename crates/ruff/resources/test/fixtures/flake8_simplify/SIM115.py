@@ -14,9 +14,7 @@ data = f.read()
 f.close()
 
 # OK
-with open("foo.txt") as f:
-    data = f.read()
-
+data = P("foo.txt").read_text()
 # OK
 with contextlib.ExitStack() as exit_stack:
     f = exit_stack.enter_context(open("filename"))

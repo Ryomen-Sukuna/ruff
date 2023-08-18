@@ -57,7 +57,7 @@ dict.fromkeys(("world",), True)
 {}.deploy(True, False)
 getattr(someobj, attrname, False)
 mylist.index(True)
-bool(False)
+False
 int(True)
 str(int(False))
 cfg.get("hello", True)

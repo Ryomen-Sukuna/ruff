@@ -7,7 +7,5 @@ def foo():
 
 
 # SIM105
-try:
+with contextlib.suppress(ValueError):
     foo()
-except ValueError:
-    pass

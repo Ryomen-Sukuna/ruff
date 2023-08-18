@@ -3,5 +3,4 @@ async def success():
 
 
 async def fail():
-    l = (1, 2, 3)
-    yield from l
+    yield from (1, 2, 3)

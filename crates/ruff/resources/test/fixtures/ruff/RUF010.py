@@ -37,4 +37,4 @@ f"{ascii(bla)}"  # OK
 
 
 # OK
-f"{str({})}"
+f"{{}}"

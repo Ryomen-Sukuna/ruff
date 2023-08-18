@@ -2,7 +2,7 @@
 # Errors
 ###
 
-"{} {}".format(a, b)
+f"{a} {b}"
 
 "{1} {0}".format(a, b)
 
@@ -14,31 +14,31 @@
 
 "{.x} {.y}".format(a, b)
 
-"{} {}".format(a.b, c.d)
+f"{a.b} {c.d}"
 
-"{}".format(a())
+f"{a()}"
 
-"{}".format(a.b())
+f"{a.b()}"
 
-"{}".format(a.b().c())
+f"{a.b().c()}"
 
-"hello {}!".format(name)
+f"hello {name}!"
 
 "{}{b}{}".format(a, c, b=b)
 
-"{}".format(0x0)
+'0'
 
-"{} {}".format(a, b)
+f"{a} {b}"
 
-"""{} {}""".format(a, b)
+f"""{a} {b}"""
 
-"foo{}".format(1)
+'foo1'
 
-r"foo{}".format(1)
+'foo1'
 
 x = "{a}".format(a=1)
 
-print("foo {} ".format(x))
+print(f"foo {x} ")
 
 "{a[b]}".format(a=a)
 
@@ -46,7 +46,7 @@ print("foo {} ".format(x))
 
 "{}{{}}{}".format(escaped, y)
 
-"{}".format(a)
+f"{a}"
 
 '({}={{0!e}})'.format(a)
 
@@ -58,13 +58,9 @@ print("foo {} ".format(x))
 
 '''{[b]}'''.format(a)
 
-"{}".format(
-    1
-)
+'1'
 
-"123456789 {}".format(
-    1111111111111111111111111111111111111111111111111111111111111111111111111,
-)
+'123456789 1111111111111111111111111111111111111111111111111111111111111111111111111'
 
 """
 {}
@@ -108,25 +104,25 @@ aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 
 
 def d(osname, version, release):
-    return"{}-{}.{}".format(osname, version, release)
+    return f"{osname}-{version}.{release}"
 
 
 def e():
-    yield"{}".format(1)
+    yield '1'
 
 
-assert"{}".format(1)
+assert '1'
 
 
 async def c():
-    return "{}".format(await 3)
+    return f"{await 3}"
 
 
 async def c():
     return "{}".format(1 + await 3)
 
 
-"{}".format(1 * 2)
+f"{1 * 2}"
 
 ###
 # Non-errors
@@ -153,13 +149,11 @@ b"{} {}".format(a, b)
 
 "" "{}".format(a["\\"])
 
-"{}".format(a["b"])
+f'{a["b"]}'
 
 r'"\N{snowman} {}".format(a)'
 
-"123456789 {}".format(
-    11111111111111111111111111111111111111111111111111111111111111111111111111,
-)
+'123456789 11111111111111111111111111111111111111111111111111111111111111111111111111'
 
 """
 {}
@@ -199,6 +193,4 @@ aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 
 "{}".format(**c)
 
-"{}".format(
-    1  # comment
-)
+'1'

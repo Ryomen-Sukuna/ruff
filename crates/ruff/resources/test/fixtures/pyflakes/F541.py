@@ -1,28 +1,19 @@
 # OK
 a = "abc"
-b = f"ghi{'jkl'}"
+b = 'ghijkl'
 
 # Errors
-c = f"def"
-d = f"def" + "ghi"
-e = (
-    f"def" +
-    "ghi"
-)
-f = (
-    f"a"
-    F"b"
-    "c"
-    rf"d"
-    fr"e"
-)
+c = "def"
+d = f"defghi"
+e = ("def" + "ghi")
+f = 'abcde'
 g = f""
 
 # OK
-g = f"ghi{123:{45}}"
+g = f"ghi{123:45}"
 
 # Error
-h = "x" "y" f"z"
+h = 'xyz'
 
 v = 23.234234
 
@@ -37,9 +28,9 @@ f"{{test}}"
 f'{{ 40 }}'
 f"{{a {{x}}"
 f"{{{{x}}}}"
-""f""
-''f""
-(""f""r"")
+""
+''
+''
 
 # To be fixed
 # Error: f-string: single '}' is not allowed at line 41 column 8

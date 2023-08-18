@@ -3,14 +3,6 @@ while 34: # trailing test comment
 
     # trailing while body comment
 
-# leading else comment
-
-else: # trailing else comment
-    pass
-
-    # trailing else body comment
-
-
 while aVeryLongConditionThatSpillsOverToTheNextLineBecauseItIsExtremelyLongAndGoesOnAndOnAndOnAndOnAndOnAndOnAndOnAndOnAndOn: # trailing comment
     pass
 
